@@ -2,18 +2,26 @@
 Python scripts to interact with Fortigate
 
 Scripts to creat IP Address object and add to address group or Firewall Policy on Foritgate
-
+</br>
 Requirements:
+
 	- Python 2.7.11+
+	
 		https://www.python.org/downloads/release/python-2711/
 		https://www.python.org/ftp/python/2.7.11/python-2.7.11.amd64.msi (install with all options)
+
 	- PyCrypto
+	
 		http://www.voidspace.org.uk/python/modules.shtml#pycrypto
 		http://www.voidspace.org.uk/downloads/pycrypto26/pycrypto-2.6.win-amd64-py2.7.exe
+	
 	- Paramiko 1.16.0+
+	- 
 		open command line and run the following "pip install paramiko"
+
 	- Add enviroment system variable
-		create folder "python-eggs" under python install directory
+	
+		create folder "python-eggs" under python install directory (This is needed on windows paltforms to stop warnings)
 		Name: PYTHON_EGG_CACHE
 		Value: C:\Python27\python-eggs
 		
