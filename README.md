@@ -1,5 +1,8 @@
 # PyFG
 #Python scripts to interact with Fortigate
+#1/5/2016 
+#Mohamed Al-Shabrawy
+#
 
 #Scripts to creat IP Address object and add to address group or Firewall Policy on Foritgate
 
@@ -35,6 +38,7 @@ Requirements:
 		
 
 Usage:
+
 	- To Creat IPAddress object and add it Group
 		pyhton.exe fortigate_ssh.py <Gotigate IP> <Username> <Password> <IP Address> group <Group Name>
 		
