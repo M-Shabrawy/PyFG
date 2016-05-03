@@ -1,8 +1,9 @@
 # PyFG
-Python scripts to interact with Fortigate
+#Python scripts to interact with Fortigate
 
-Scripts to creat IP Address object and add to address group or Firewall Policy on Foritgate
-</br>
+#Scripts to creat IP Address object and add to address group or Firewall Policy on Foritgate
+
+
 Requirements:
 
 	- Python 2.7.11+
@@ -24,6 +25,13 @@ Requirements:
 		create folder "python-eggs" under python install directory (This is needed on windows paltforms to stop warnings)
 		Name: PYTHON_EGG_CACHE
 		Value: C:\Python27\python-eggs
+
+	- On Fortigate change DH key length to 1024
+		config system global
+			set dh-params 1024
+			end
+	- Create Address Group on Fortigate (Or it will be automatically created)
+	- Create a policy and add the group to it
 		
 
 Usage:
