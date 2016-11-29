@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <remv1:Remediation-Plugin xmlns:remv1="RemediationVersion1.xsd" Name="Fortinet Fortigate Integration">
-  <remv1:Action Name="Fortigate Add IP To Group" Command="python.exe">
-    <remv1:ConstantParameter Name="Script" Switch="fortigate_ssh.py" Order="1" />
+    <remv1:Action Name="Fortigate Add IP To Group" Command="python.exe">
+        <remv1:ConstantParameter Name="Script" Switch="fortigate_ssh.py" Order="1" />
 	<remv1:StringParameter Name="FGHost" Switch="" Order="2"> 
-    </remv1:StringParameter>
-	<remv1:StringParameter Name="Username" Switch="" Order="3">
-		<remv1:DefaultInput>
-			<remv1:StaticInput Value="admin" />
-        </remv1:DefaultInput>
-    </remv1:StringParameter>
-	<remv1:EncryptedParameter>
-	<remv1:StringParameter Name="Password" Switch="" Order="4" />
-    </remv1:EncryptedParameter>
-	<remv1:StringParameter Name="IP" Switch="" Order="5">
-	</remv1:StringParameter>
-	<remv1:StringParameter Name="Group/Policy" Switch="" Order="6">
-		<remv1:DefaultInput>
-			<remv1:StaticInput Value="Group" />
-        </remv1:DefaultInput>
-	</remv1:StringParameter>
-	<remv1:StringParameter Name="Group" Switch="" Order="7">
-		<remv1:DefaultInput>
-			<remv1:StaticInput Value="logrhythm-block" />
-        </remv1:DefaultInput>
-	</remv1:StringParameter>
-  </remv1:Action> 
+        </remv1:StringParameter>
+        <remv1:StringParameter Name="Username" Switch="" Order="3">
+            <remv1:DefaultInput>
+	        <remv1:StaticInput Value="admin" />
+            </remv1:DefaultInput>
+        </remv1:StringParameter>
+        <remv1:EncryptedParameter>
+        <remv1:StringParameter Name="Password" Switch="" Order="4" />
+        </remv1:EncryptedParameter>
+        <remv1:StringParameter Name="IP" Switch="" Order="5">
+        </remv1:StringParameter>
+        <remv1:StringParameter Name="Group/Policy" Switch="" Order="6">
+            <remv1:DefaultInput>
+                <remv1:StaticInput Value="Group" />
+            </remv1:DefaultInput>
+        </remv1:StringParameter>
+        <remv1:StringParameter Name="Group" Switch="" Order="7">
+            <remv1:DefaultInput>
+                <remv1:StaticInput Value="logrhythm-block" />
+            </remv1:DefaultInput>
+        </remv1:StringParameter>
+    </remv1:Action> 
 </remv1:Remediation-Plugin>
