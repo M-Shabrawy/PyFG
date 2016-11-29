@@ -44,7 +44,7 @@ ssh.load_system_host_keys()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 ssh.connect(FGHost, username=username, password=password)
 
-print 'connection to Fortigate established'
+print 'connection to Fortigate established\n'
 channel = ssh.invoke_shell()
 
 # Add address object
