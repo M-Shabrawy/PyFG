@@ -18,11 +18,10 @@ if __name__ == '__main__':
 		GP = sys.argv[6]
 		Src_Dst = sys.argv[7]
 		Src_Dst = Src_Dst.lower()
-		if Src_Dst != 'src' or != 'dst':
+		if Src_Dst != 'src' or 'dst':
 			print cli_usage
 			exit()
-		VDOM_enabled = 1
-		print IPAddr+' '+FGHost+' Policy '+GP
+		print IPAddr+' '+FGHost+' Policy '+GP+'\n'
 	elif len(sys.argv) == 7: #IP will be created and added to Group
 		FGHost = sys.argv[1]
 		username = sys.argv[2]
@@ -34,7 +33,7 @@ if __name__ == '__main__':
 			print cli_usage
 			exit()
 		GP = sys.argv[6]
-		print IPAddr+' '+FGHost+' '+GP
+		print IPAddr+' '+FGHost+' '+GP+'\n'
 	else:
 		print cli_usage
 		exit()
@@ -44,74 +43,74 @@ ssh.load_system_host_keys()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 ssh.connect(FGHost, username=username, password=password)
 
-print 'connection to Fortigate established\n'
+print 'connection to Fortigate established'
 channel = ssh.invoke_shell()
 
 # Add address object
 channel.send('config firewall address\n')
 time.sleep(1)
 output=channel.recv(2048)
-print output
+print output+'\n'
 channel.send('edit ' + IPAddr + '\n')
 time.sleep(1)
 output=channel.recv(2048)
-print output
+print output+'\n'
 channel.send('set type ipmask\n')
 time.sleep(1)
 output=channel.recv(2048)
-print output
+print output+'\n'
 channel.send(' set subnet ' + IPAddr + ' 255.255.255.255\n')
 time.sleep(1)
 output=channel.recv(2048)
-print output
+print output+'\n'
 channel.send('end\n')
 time.sleep(1)
 output=channel.recv(2048)
-print output
+print output+'\n'
 
 #Add to Group
-if Group_Policy == 'group'
+if Group_Policy == 'group':
 	channel.send('config firewall addrgrp\n')
 	time.sleep(1)
 	output=channel.recv(2048)
-	print output
+	print output+'\n'
 	channel.send('edit ' + GP + '\n')
 	time.sleep(1)
 	output=channel.recv(2048)
-	print output
+	print output+'\n'
 	channel.send('append member ' + IPAddr + '\n')
 	time.sleep(1)
 	output=channel.recv(2048)
-	print output
+	print output+'\n'
 	channel.send('next\n')
 	time.sleep(1)
 	output=channel.recv(2048)
-	print output
+	print output+'\n'
 	channel.send('end\n')
 	time.sleep(1)
 	output=channel.recv(2048)
-	print output
-elif Group_Policy == 'policy'
+	print output+'\n'
+elif Group_Policy == 'policy':
 	channel.send('config firewall policy\n')
 	time.sleep(1)
 	output=channel.recv(2048)
-	print output
+	print output+'\n'
 	channel.send('edit ' + GP + '\n')
 	time.sleep(1)
 	output=channel.recv(2048)
-	print output
+	print output+'\n'
 	channel.send('append ' + Src_Dst + 'addr ' + IPAddr + '\n')
 	time.sleep(1)
 	output=channel.recv(2048)
-	print output
+	print output+'\n'
 	channel.send('next\n')
 	time.sleep(1)
 	output=channel.recv(2048)
-	print output
+	print output+'\n'
 	channel.send('end\n')
 	time.sleep(1)
 	output=channel.recv(2048)
-	print output
+	print output+'\n'
 
 channel.close()
 ssh.close()
