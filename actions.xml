@@ -10,7 +10,7 @@
             </remv1:DefaultInput>
         </remv1:StringParameter>
         <remv1:EncryptedParameter>
-        <remv1:StringParameter Name="Password" Switch="" Order="4" />
+            <remv1:StringParameter Name="Password" Switch="" Order="4" />
         </remv1:EncryptedParameter>
         <remv1:StringParameter Name="IP" Switch="" Order="5">
         </remv1:StringParameter>
